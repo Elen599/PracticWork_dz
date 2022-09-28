@@ -11,4 +11,4 @@ file.close()
 result = []
 for i in range(len(array)):
     result.append(array[i] * int(num[i]))
-print(num, "\n", *array, "\n", *result) 
+print(f'Список элементов, хранящихся в файле ".txt":\n{num}\nЗаданый список элементов:\n{array}\nПроизведения элементов в списках:\n{result}') 
