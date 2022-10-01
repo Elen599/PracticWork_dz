@@ -1,14 +1,18 @@
 # Задайте числами список из N элементов, заполненных из промежутка [-N, N]. 
 # Найдите произведение элементов на указанных позициях. 
 # Позиции хранятся в файле file.txt в одной строке одно число.
+from random import*
 
-array = [1, 2, 3, 5, 7]
+number = int(input("Введите число: "))
+
+listInt = []
+
+for i in range(number):
+    listInt.append(randint(-number, number))
+print(listInt)
 
 with open("list_4.txt", "r") as file:
-    num = file.readlines()
+    result = file.read().split('\n')
 file.close()
-
-result = []
-for i in range(len(array)):
-    result.append(array[i] * int(num[i]))
-print(f'Список элементов, хранящихся в файле ".txt":\n{num}\nЗаданый список элементов:\n{array}\nПроизведения элементов в списках:\n{result}') 
+print(result)
+print(f'Произведение {int(result[0])} и {int(result[1])}', f'элементов сгенерированного массива = {listInt[int(result[0])] * listInt[int(result[1])]}') 
